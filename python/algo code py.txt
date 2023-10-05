@@ -1,0 +1,69 @@
+#CODEPHOTOCOPIE
+def switch_case(note):
+    
+    blabla = {
+        (0 < note <= 10): note * 0.5,
+        (10 < note <= 20): note * 0.3,
+        (note > 20): note * 0.2
+    }
+    return blabla.get(True,"you can only print 1 page or more")
+  
+pages = float(input("Entrez pages number: "))
+
+mention = switch_case(pages)
+print("prix que tu va paye est ",(mention) , "DH") if pages > 0 else print (mention)
+
+-----------------------------------
+#CODE YDEKHEL AR9AM W YE3TIH MAX W MIN
+def Min_Max(N, min, max):
+    i = 1
+    while i <= N:
+        x = int(input("Entrez une valeur entière (entre 0 et 100) : "))
+        while x <= 0 or x >= 100:
+            print("La valeur saisie n'est pas valide. Veuillez réessayer.")
+            x = int(input("Entrez une valeur entière (entre 0 et 100) : "))
+        
+        if x < min:
+            min = x
+        if x > max:
+            max = x
+        
+        i += 1
+    
+    return min, max
+
+# Utilisation de la procédure Min_Max
+N = int(input("Entrez le nombre de valeurs à saisir : "))
+min_value = 100
+max_value = 0
+
+min_value, max_value = Min_Max(N, min_value, max_value)
+
+print("La plus petite valeur est :", min_value)
+print("La plus grande valeur est :", max_value)
+
+--------------------------------------------------------
+#GAME 3REF RA9EM
+import random
+
+def main():
+    print("Anle3bo Game ana ankhtar ra9em w nta khasek t3erfo\n")
+    
+    MAX = 100
+    MIN = 1
+    nombreMystere = random.randint(MIN, MAX)
+    
+    while True:
+        nombreEntre = int(input("Chhal had ra9em ? "))
+        
+        if nombreMystere > nombreEntre:
+            print("No Kteer !\n")
+        elif nombreMystere < nombreEntre:
+            print("No 9eel !\n")
+        else:
+            print("3la slaaaamteek l9itih hhh  !!!\n")
+            break
+
+if __name__ == "__main__":
+    main()
+------------------------------------------------------------

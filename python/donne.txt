@@ -1,0 +1,53 @@
+Exercice 1
+On souhaite créer une application Python permettant la gestion des comptes bancaires d'une banque:
+Un compte bancaire est défini par un identifiant unique du titulaire, le numéro de compte et son solde
+Deux opérations de base sont possibles sur son compte: déposer et retirer de l'argent
+Aucune facilité de caisse n'est autorisée (i.e. le solde d'un compte ne peut pas être négatif)
+Les acteurs de cette application sont: l'agent de la banque et un client. Chaque client dispose d'un code secret pour accéder à son compte.
+On suppose que chaque client a un seul compte
+Nb:
+le numéro du client est incrémental
+le numéro de compte est un entier formé par le numéro de son propriétaire et un nombre aléatoire compris entre 0 et 100.
+
+Exercice 1: suite
+1- On considère Client, Compte et ClientCompte les dictionnaires utilisés pour la gestion des comptes. Définir les fonctions suivantes relatives à
+Tagent de la banque:
+
+-ajouterClient{ numCI, MPC, numC, SoldeC) tels que: numal est le numéro du nouveau dient, MPC est son code secret, numC est le numéro de son compte et SoldeC est le solde initial de son compte
+-SupprimerClient (numC) tel que numc est le numéro du compte à supprimer
+
+
+2-Définir les fonctions suivantes relatives à un client tout identifiant les paramètres de ces fonctions:
+
+*Modifier MPClient: permettant de modifier le mot de passe d'un client
+*Déposer: permettant de déposer une somme d'argent dans un compte
+*Retirer : permettant de retirer une somme d'argent d'un compte
+
+3-Définir la fonction lambda genererNumCompte permettant de générer le numéro de compte d'un client à partir du numéro de ce client.
+
+4-Ecrire une fonction EcrireFichierCSV permettant d'enregistrer les numéros des clients et leurs codes secrets dans un fichier CSV.
+
+5-Ecrire une fonction manipSTS permettant de créer une liste, un tuple et un set de numéro de comptes à partir du dictionnaire ClientCompte.
+
+6-Ecrire un programme principal permettant de tester les fonctions définies précédemment. Proposer un menu de choix à l'agent et aux clients de La banque.
+
+Exercice 1:suite
+Indication:Utiliser la structure de données dictionnaire de Python pour la gestion des comptes et des clients
+Exemple:
+·Le dictionnaire Compte associe a chaque numéro de Compte son solde
+Exemple:Compte=(56:200,20:360) signifie que le solde du compte numéro 56 est 200Dh et le solde du compte numéro 20 est 360Dh
+·Le dictionnaire Client qui associe a chaque numéro de client son code secret
+Exemple:Client={1:"566",2:"836") signifie que le code secret du client numéro 1 est égal à 566 et le code secret du client numéro 2 est égal 3836
+·te dictionnaire ClientCompte associe à chaque numéro de client son numéro de compte
+Exemple:ChientCompte {56:1,20:2) signifie que le numéro de compte 56 correspond au client numéro 1 et le numéro de compte 20 correspond au client numero 2
+
+Exercice 1:suite
+Exemple:Si le numéro du client est 5 alors son numéro de compte est par exemple: 556 (ou 5 est le numéro du client et 56 est un nombre aléatoire compris entre 0 et 100).
+A travers un menu de choir, cette application offre à ragent les fonctionnalités suivantes:
+1. Ajouter un Compte
+2 Supprimer un Compte
+A travers un menu de choix cette application offre à un client les fonctionnalités suivantes:
+1.Modifier son mot de passe
+2.Afficher son solde
+3.Deposer une somme d'argent
+4.Retirer une somme dargent
