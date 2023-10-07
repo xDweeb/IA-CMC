@@ -1,0 +1,32 @@
+#Exercice 1
+ALGORITHME "affichage"
+
+VARIABLES
+    nom : CHAINE
+    age : entier
+    
+DÉBUT
+    Écrire ("entrer votre nom")
+    Lire (nom)
+    Écrire ("quelle votre age?")
+    Lire (age)
+    Écrire ("Bonjour ",nom,"tu as",age,"ans et bienvenue a l'université")
+FIN
+
+#Exercice 2
+ALGORITHME "calcule"
+
+VARIABLES
+    largeur : entier
+    longueur : entier
+    perimetre : entier
+    surface : entier
+
+DÉBUT
+    Écrire ("entrer la largeur")
+    Lire (largeur)
+    Écrire ("entrer la longueur")
+    Lire (longueur)
+    perimetre := (largeur + longueur) * 2
+    surface := largeur * longueur
+    Écrire ("le perimetre est de ",perimetre," et la surface est de ",surface)
