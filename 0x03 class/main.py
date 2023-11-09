@@ -1,9 +1,6 @@
-from src.firstcalss import info
+from src.testclass import Vehicule
 
 
-xd = info()
-xd.nom = "El Yakouti"
-xd.prenom = "Taibi"
-xd.age = 20
-
-xd.affiche()
+if __name__=='__main__':
+    ma_voiture = Vehicule()
+    print(ma_voiture.__doc__)
