@@ -1,0 +1,10 @@
+birthyear = input('Année de naissance ? ')
+try:
+    print('Tu as', 2023 - int(birthyear), 'ans.') #code risqué
+except:
+    print('Erreur, veuillez entrer un nombre.') #code à exécuter en cas d'erreur
+
+print('Fin du programme.')
+
+#############################################################################
+
