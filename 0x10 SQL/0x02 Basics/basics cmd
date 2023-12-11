@@ -1,0 +1,11 @@
+pour cree un database :
+
+CREATE DATABASE xdweb_data ;
+
+pour afficher les database :
+
+SHOW CREATE DATABASES xdweb_data;
+
+pour supprimer une database :
+
+DROP DATABASE xdweb_data;

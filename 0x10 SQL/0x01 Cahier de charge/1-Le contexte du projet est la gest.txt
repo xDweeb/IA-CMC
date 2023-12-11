@@ -1,0 +1,74 @@
+1-Le contexte du projet est la gestion informatisée d'un élevage de chevaux de race. Le but est de suivre l'évolution et la carrière des chevaux, ainsi que de gérer les participants, les propriétaires, les éleveurs, et les données relatives aux concours.
+
+2-Les règles de gestion exprimées incluent l'identification unique des personnes et des chevaux, la hiérarchie du personnel encadré par un supérieur, le suivi mensuel du poids et de la taille des chevaux, l'attribution du numéro de tatouage à partir de deux mois, etc.
+
+3-Les éléments de données comprennent le nom, prénom, adresse, téléphone des personnes, le numéro unique d'identification, la fonction du personnel, le nom, race, couleur, numéro unique, poids, taille des chevaux, le pedigree, le numéro de tatouage, etc.
+
+4-Un cheval peut être identifié par son numéro unique, une personne par son numéro unique également, et un concours par son nom et l'année.
+
+5-Un cheval est caractérisé par son nom, race, couleur, numéro unique, poids, taille, pedigree, et numéro de tatouage.
+
+6-Une race est caractérisée par des attributs propres tels que son poids type et sa taille type.
+
+7-La fiche pedigree contient des données sur les parents du cheval, permettant de retrouver les caractéristiques héréditaires.
+
+8-Oui, un cheval peut avoir plusieurs propriétaires à des moments différents.
+
+9-Oui, un cheval peut avoir plusieurs éleveurs au cours de sa vie.
+
+10-Les données liées à un concours comprennent le nom du concours, l'année, le nombre de participants, et la place obtenue par chaque cheval.
+
+
+Groupe des données :
+
+1-
+Concept : Personne
+   Données : Nom, prénom, adresse, téléphone, numéro unique, fonction.
+   Valeur : [Données spécifiques pour chaque personne]
+Concept : Cheval
+   Données : Nom, race, couleur, numéro unique, poids, taille, pedigree, numéro de tatouage.
+   Valeur : [Données spécifiques pour chaque cheval]
+Concept : Propriétaire
+   Données : Nom, prénom, adresse, téléphone.
+   Valeur : [Données spécifiques pour chaque propriétaire]
+Concept : Concours
+   Données : Nom du concours, année, nombre de participants.
+   Valeur : [Données spécifiques pour chaque concours]
+Concept : Personnel
+   Données : Nom, prénom, adresse, téléphone, numéro unique, fonction.
+   Valeur : [Données spécifiques pour chaque membre du personnel]
+
+2-
+Dictionnaire de données :
+Voir le tableau complet des entités, attributs et valeurs associées.
+
+3-
+Contraintes :
+   -Contraintes d'identification unique pour les personnes, chevaux, propriétaires, concours, et membres du personnel.
+   -Hiérarchie du personnel.
+   -Suivi mensuel du poids et de la taille des chevaux.
+   -Attribution du numéro de tatouage à partir de deux mois
+
+4-
+Dépendances fonctionnelles :
+   -Exemple : Nom, prénom, adresse, téléphone → Numéro unique (pour chaque entité concernée).
+
+5-
+Graphe des DF :
+   -Construire un graphe illustrant les dépendances fonctionnelles entre les entités et leurs attributs.
+
+II. Définition :
+
+Entités :
+
+Personne, Cheval, Propriétaire, Concours, Personnel.
+Associations :
+
+Personne → Membre du personnel (relation d'encadrement).
+Cheval → Propriétaire (relation de propriété).
+Cheval → Éleveur (relation de prise en charge).
+Cheval → Concours (participation à des concours).
+Propriétaire → Membre du personnel (coordination des compétitions).
+Cardinalités et MCD :
+
+Exemple : Cheval (1, N) → Propriétaire (0, 1) : Un cheval peut avoir 0 ou 1 propriétaire, un propriétaire peut avoir 1 à N chevaux
