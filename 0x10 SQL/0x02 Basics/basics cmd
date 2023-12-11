@@ -6,6 +6,27 @@ pour afficher les database :
 
 SHOW CREATE DATABASES xdweb_data;
 
+pour utiliser une database :
+
+USE xdweb_data;
+
 pour supprimer une database :
 
 DROP DATABASE xdweb_data;
+
+pour afficher les tables :
+
+SHOW TABLES;
+
+affiche les moteurs de stockage :
+
+SHOW ENGINES ; 
+
+pour cree une table :
+
+CREATE TABLE xdweb_data (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
+);
