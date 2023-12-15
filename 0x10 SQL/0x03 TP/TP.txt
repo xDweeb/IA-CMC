@@ -1,0 +1,248 @@
+1- Creation the database
+
+CREATE DATABASE cmcformation;
+USE cmcformation;
+
+CREATE TABLE ETUDIANT(
+    numCINEtu VARCHAR(10),
+    nomEtu VARCHAR(45),
+    prenomEtu VARCHAR(45),
+    dateNaissance DATE,
+    adressEtu VARCHAR(45),
+    villeEtu VARCHAR(45),
+    niveauEtu VARCHAR(45),
+    PRIMARY KEY(numCINEL)
+);
+
+CREATE TABLE Inscription(
+    codeSess INT,
+    numCINEL VARCHAR(10),
+    typeCours VARCHAR(45),
+    PRIMARY KEY(codeSess, numCINEL),
+    FOREIGN KEY(codeSess) REFERENCES SESSION(codeSess),
+    FOREIGN KEY(numCINEL) REFERENCES ETUDIANT(numCINEL)
+);
+
+CREATE TABLE SESSION(
+    codeSess INT,
+    nomSess VARCHAR(45),
+    dateDebut DATE,
+    dateFin VARCHAR(45),
+    PRIMARY KEY(codeSess)
+);
+
+CREATE TABLE SPECIALITE(
+    codeSpec INT,
+    nomSpec VARCHAR(45),
+    descSpec VARCHAR(45),
+    PRIMARY KEY(codeSpec)
+);
+
+CREATE TABLE Formation(
+    codeForm INT,
+    titreForm VARCHAR(45),
+    dureeForm DOUBLE,
+    prixForm DOUBLE,
+    SESSION_codeSess INT,
+    PRIMARY KEY(codeForm),
+    FOREIGN KEY(SESSION_codeSess) REFERENCES SESSION(codeSess)
+);
+
+CREATE TABLE Catalogue(
+    codeSpec INT,
+    codeForm INT,
+    PRIMARY KEY(codeSpec, codeForm),
+    FOREIGN KEY(codeSpec) REFERENCES SPECIALITE(codeSpec),
+    FOREIGN KEY(codeForm) REFERENCES Formation(codeForm)
+);
+
+2- To add data in table ETUDIANT
+
+INSERT INTO ETUDIANT (numCINEL, nomEtu, prenomEtu, dateNaissance, adressEtu, villeEtu, niveauEtu)
+VALUES 
+('AB234567', 'Alami', 'Ahmad', '1986-01-01', 'Rue du port, 13', 'Tanger', 'bac'),
+('G5346789', 'Toumi', 'Aicha', '2000-03-12', 'N12 immeuble Jaouhara', 'Casablanca', 'Master'),
+('C0987265', 'Souni', 'Sanaa', '1998-04-30', 'Place du peuple n 2', 'Tanger', 'Niveau bac'),
+('D2356903', 'Idrissi Alami', 'Mohammed', '1996-05-05', 'Lotissement najah,', 'Rabat', 'Bac + 4'),
+('Y1234987', 'Ouled thami', 'Ali', '1979-12-04', 'La ville haute,rue chouhada n 6', 'Tanger', 'Bachelor'),
+('J3578902', 'Ben Omar', 'Abd Allah', '1990-06-25', 'La ville Amina n12 bir rami', 'Kenitra', 'Phd'),
+('F9827363', 'El Khattabi', 'Fatima Zohra', '1997-01-10', 'immeuble iftikhar n13 ettakaddoum', 'Rabat', 'Bac +2');
+
+-To show data in table ETUDIANT
+
+-for all data
+SELECT * FROM ETUDIANT;
+-for specific data
+SELECT numCINEL, nomEtu, prenomEtu, dateNaissance, adressEtu, villeEtu, niveauEtu FROM ETUDIANT;
+
+3- To add data in table SESSION
+
+INSERT INTO SESSION (codeSess, nomSess, dateDebut, dateFin)
+VALUES 
+(1101, 'Session1101', '2022-01-02', '2022-01-14'),
+(1102, 'Session 1102', '2022-02-03', '2022-02-15'),
+(1201, 'Session 1201', '2022-03-04', '2022-03-18'),
+(1202, 'Session 1202', '2022-04-05', '2022-04-19'),
+(1301, 'Session 1301', '2022-01-06', '2022-01-21'),
+(1302, 'Session 1302', '2022-05-07', '2022-05-22'),
+(1303, 'Session 1303', '2022-06-08', '2022-06-23'),
+(1401, 'Session 1401', '2022-09-01', '2022-09-11'),
+(1402, 'Session 1402', '2022-08-08', '2022-08-18'),
+(1501, 'Session 1501', '2022-11-11', '2022-12-01'),
+(1502, 'Session 1502', '2022-09-12', '2022-10-02'),
+(1601, 'Session 1601', '2022-09-13', '2022-09-25'),
+(1602, 'Session 1602', '2022-10-14', '2022-10-26'),
+(1104, 'Session 1104', '2022-10-15', '2022-10-27'),
+(1203, 'Session 1203', '2022-11-16', '2022-11-30'),
+(1204, 'Session 1204', '2022-12-17', '2022-12-31');
+
+-To show data in table SESSION
+-for all data
+SELECT * FROM SESSION;
+-for specific data
+SELECT codeSess, nomSess, dateDebut, dateFin FROM SESSION;
+
+4- To add data in table SPECIALITE
+
+INSERT INTO SPECIALITE (codeSpec, nomSpec, descSpec)
+VALUES 
+(101, 'Genie logiciel et developpement', 'GL'),
+(102, 'Data', 'Data engineering'),
+(103, 'Langues', 'Anglais, Francais'),
+(104, 'Communication', 'Communication'),
+(105, 'Securite', 'Reseaux et securite');
+
+-To show all data in table SPECIALITE
+SELECT * FROM SPECIALITE;
+
+5- To add data in table Formation
+
+INSERT INTO Formation (codeForm, titreForm, dureeForm, prixForm, SESSION_codeSess)
+VALUES 
+(11, 'Programming Java', 12, 3600, 1101),
+(12, 'Web Development', 14, 4200, 1102),
+(13, 'Anglais technique', 15, 3750, 1301),
+(14, 'Communication', 10, 2500, 1401),
+(15, 'Intelligence Artificielle', 20, 6000, 1501),
+(16, 'Soft Skills', 12, 3000, 1601);
+
+-To show all data in table Formation
+SELECT * FROM Formation;
+
+6- To add data in table Catalogue
+
+INSERT INTO Catalogue (codeSpec, codeForm)
+VALUES 
+(101, 11),
+(101, 12),
+(102, 15),
+(101, 15),
+(103, 13),
+(104, 13),
+(104, 14),
+(104, 16);
+
+-To show all data in table Catalogue
+SELECT * FROM Catalogue;
+
+7- To add data in table Inscription
+
+INSERT INTO Inscription (codeSess, numCINEL, typeCours)
+VALUES 
+(1101, 'AB234567', 'Distanciel'),
+(1101, 'G5346789', 'Distanciel'),
+(1101, 'C0987265', 'Distanciel'),
+(1101, 'D2356903', 'Distanciel'),
+(1101, 'Y1234987', 'Distanciel'),
+(1101, 'J3578902', 'Distanciel'),
+(1101, 'F9827363', 'Distanciel'),
+(1201, 'AB234567', 'Présentiel'),
+(1201, 'G5346789', 'Présentiel'),
+(1201, 'C0987265', 'Présentiel'),
+(1201, 'D2356903', 'Présentiel'),
+(1201, 'Y1234987', 'Présentiel'),
+(1201, 'J3578902', 'Présentiel'),
+(1302, 'AB234567', 'Présentiel'),
+(1302, 'G5346789', 'Distanciel'),
+(1302, 'C0987265', 'Présentiel'),
+(1302, 'D2356903', 'Présentiel'),
+(1302, 'Y1234987', 'Présentiel'),
+(1401, 'G5346789', 'Distanciel'),
+(1401, 'C0987265', 'Distanciel'),
+(1401, 'D2356903', 'Distanciel'),
+(1401, 'Y1234987', 'Distanciel'),
+(1401, 'J3578902', 'Distanciel'),
+(1401, 'F9827363', 'Distanciel'),
+(1501, 'AB234567', 'Distanciel'),
+(1501, 'G5346789', 'Présentiel'),
+(1501, 'C0987265', 'Distanciel'),
+(1501, 'D2356903', 'Présentiel'),
+(1501, 'Y1234987', 'Présentiel'),
+(1501, 'J3578902', 'Présentiel'),
+(1501, 'F9827363', 'Presenciel');
+
+-To show all data in table Inscription
+SELECT * FROM Inscription;
+
+-- To show all data in table ETUDIANT and SESSION
+
+SELECT * FROM ETUDIANT, SESSION;
+
+1. Dans la table ETUDIANT,modifier les données de la colonne « niveauEtu » comme suit :
+
+Ancienne valeur
+Master
+Bachelor
+Phd
+Nouvelle Valeur
+Master == Bac+5
+Bachelor == Bac+4
+Phd == Doctorat
+
+correction 1
+
+UPDATE ETUDIANT
+SET niveauEtu = 'Bac+5'
+WHERE niveauEtu = 'Master';
+
+UPDATE ETUDIANT
+SET niveauEtu = 'Bac+4'
+WHERE niveauEtu = 'Bachelor';
+
+UPDATE ETUDIANT
+SET niveauEtu = 'Doctorat'
+WHERE niveauEtu = 'Phd';
+
+2. Renommer le titre de la formation 11 avec « développement Java»
+
+correction 2
+
+UPDATE Formation
+SET titreForm = 'Développement Java'
+WHERE codeForm = 11;
+
+3. Ajouter une colonne « numlnscription » dans la table INSCRIPTION. La valeur de cette colonne sera la concaténation du codesess etnumCINEtu→Utiliser la fonction concat()
+
+correction 3
+
+ALTER TABLE Inscription
+ADD numlnscription VARCHAR(20);
+
+UPDATE Inscription
+SET numlnscription = CONCAT(codeSess, numCINEL);
+
+4. Il y a eu une erreur lors de l'inscription de l'étudiant dont le nom est « Alami ». Sa date de naissance est le 02 Janvier 1987, et il est de la villede Kenitra.
+
+correction 4
+
+UPDATE ETUDIANT
+SET dateNaissance = '1987-01-02', villeEtu = 'Kenitra'
+WHERE nomEtu = 'Alami';
+
+5.L'étudiante Aicha souhaite rendre tous ses cours en distanciel.
+
+correction 5
+
+UPDATE Inscription
+SET typeCours = 'Distanciel'
+WHERE numCINEL = 'G5346789';

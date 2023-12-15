@@ -34,3 +34,5 @@ CREATE TABLE xdweb_data (
 pour delete une table :
 
 DROP TABLE xdweb_data;
+
+
