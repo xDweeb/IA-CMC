@@ -246,3 +246,84 @@ correction 5
 UPDATE Inscription
 SET typeCours = 'Distanciel'
 WHERE numCINEL = 'G5346789';
+
+PARTIR 3
+
+1. Consulter le contenu de toutes les tables du schéma CMCFORMATION.
+
+correction 1
+
+SELECT * FROM ETUDIANT;
+SELECT * FROM SESSION;
+SELECT * FROM SPECIALITE;
+SELECT * FROM Formation;
+SELECT * FROM Catalogue;
+SELECT * FROM Inscription;
+
+2. Donner la list des étudiants qui sont de la ville de Tanger.
+
+correction 2
+
+SELECT * FROM ETUDIANT
+WHERE villeEtu = 'Tanger';
+
+3. Donner la liste des formations qui coutent plus de 3000 DH.
+
+correction 3
+
+SELECT * FROM Formation
+WHERE prixForm > 3000;
+
+4. Pour chaque formation, donner le prix journalier.(supposant que la durée renseignée est en jours)
+
+correction 4
+
+SELECT titreForm, prixForm/dureeForm AS 'Prix journalier'
+FROM Formation;
+
+5. Donner la liste des sessions ouvertes de la formation dont le code est 11.
+
+correction 5
+
+SELECT * FROM SESSION
+WHERE codeSess IN (SELECT SESSION_codeSess FROM Formation WHERE codeForm = 11);
+
+6. Donner la liste des numéros CIN des étudiants inscrits dans la session 1302 classés par ordre alphabétique.
+
+correction 6
+
+SELECT numCINEL FROM Inscription
+WHERE codeSess = 1302
+ORDER BY numCINEL;
+
+7. Donner la liste des spécialités Actives.
+
+correction 7
+
+SELECT * FROM SPECIALITE
+WHERE codeSpec IN (SELECT codeSpec FROM Catalogue);
+
+8. Combien y a-t-il d'étudiants ?
+
+correction 8
+
+SELECT COUNT(*) AS 'Nombre d''etudiants' FROM ETUDIANT;
+
+9. Donner l'age de chaque étudiant.(utiliser les fonctions comme : datediff(), CURDATE(), timestampdiff(), now(), etc.)
+
+correction 9
+
+SELECT nomEtu, prenomEtu, datediff(CURDATE(), dateNaissance)/365 AS 'Age'
+FROM ETUDIANT;
+
+10. Quelle est la plus chère des formations ? et la moins chère ?
+
+correction 10
+
+SELECT titreForm, prixForm FROM Formation
+WHERE prixForm = (SELECT MAX(prixForm) FROM Formation);
+
+SELECT titreForm, prixForm FROM Formation
+WHERE prixForm = (SELECT MIN(prixForm) FROM Formation);
+
+Fin.
