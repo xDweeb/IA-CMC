@@ -326,4 +326,58 @@ WHERE prixForm = (SELECT MAX(prixForm) FROM Formation);
 SELECT titreForm, prixForm FROM Formation
 WHERE prixForm = (SELECT MIN(prixForm) FROM Formation);
 
-Fin.
+11. donne pour chaque des etudiants le nombre d'inscriptions.
+
+correction 11
+
+SELECT nomEtu, prenomEtu, COUNT(*) AS 'Nombre d''inscriptions'
+FROM ETUDIANT, Inscription
+WHERE ETUDIANT.numCINEL = Inscription.numCINEL
+GROUP BY ETUDIANT.numCINEL;
+
+15. Donner pour chaque session le nombre d'inscriptions distancielles et présentielle.
+
+correction 15
+
+SELECT codeSess, COUNT(*) AS 'Nombre d''inscriptions distancielles'
+FROM Inscription
+WHERE typeCours = 'Distanciel'
+GROUP BY codeSess;
+
+SELECT codeSess, COUNT(*) AS 'Nombre d''inscriptions présentielle'
+FROM Inscription
+WHERE typeCours = 'Présentiel'
+GROUP BY codeSess;
+
+16. lister pour chaque formation ses sessions ouvertes.Afficher le titre de la formation, le nom de la session, la date de début et la date de fin.
+
+correction 16
+
+CREATE VIEW FormationSession AS 
+SELECT titreForm, nomSess, dateDebut, dateFin
+FROM Formation, SESSION
+WHERE Formation.SESSION_codeSess = SESSION.codeSess;
+
+SELECT * FROM FormationSession;
+
+17; cree une vue qui donne tout les etudiants inscrits de la ville de Rabat.
+
+correction 17
+
+CREATE VIEW EtudiantRabat AS
+SELECT * FROM ETUDIANT
+WHERE villeEtu = 'Rabat';
+
+SELECT * FROM EtudiantRabat;
+
+18. Créer une table temporaire qui contient les etudiants dans la ville de Tanger.
+
+correction 18
+
+CREATE TEMPORARY TABLE EtudiantTanger AS
+SELECT * FROM ETUDIANT
+WHERE villeEtu = 'Tanger';
+
+SELECT * FROM EtudiantTanger;
+
+19. 
