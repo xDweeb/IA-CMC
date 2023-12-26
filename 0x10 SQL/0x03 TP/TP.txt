@@ -380,4 +380,50 @@ WHERE villeEtu = 'Tanger';
 
 SELECT * FROM EtudiantTanger;
 
-19. 
+Partie 2 :
+
+1. créé 4 utilisateur : Use User1@localhost avec le Modpass: Modep@sse1 / User2@localhost : Modep@sse2 / User3@localhost : Modep@sse3 / User4@localhost : Modep@sse4
+
+correction 1
+
+CREATE USER 'User1'@'localhost' IDENTIFIED BY 'Modep@sse1';
+CREATE USER 'User2'@'localhost' IDENTIFIED BY 'Modep@sse2';
+CREATE USER 'User3'@'localhost' IDENTIFIED BY 'Modep@sse3';
+CREATE USER 'User4'@'localhost' IDENTIFIED BY 'Modep@sse4';
+
+2. Vérifier les utilisateurs qui existent sur le serveur. 
+
+correction 2
+
+SELECT User FROM mysql.user;
+or
+SELECT user, host FROM mysql.user;
+
+3.Donel les privilège suivant aux utilisateurs comme suit : User1 : Select sur tout les objet de la base de données. / User2 : INSERT sur les tables Étudiant, Formation / Use3: tous les privilèges sur la base de données. / User4 : Update sur la table ETUDIANT 
+
+correction 3
+-User
+GRANT SELECT ON cmcformation.* TO 'User1'@'localhost';
+
+-User2
+GRANT INSERT ON cmcformation.ETUDIANT TO 'User2'@'localhost';
+GRANT INSERT ON cmcformation.Formation TO 'User2'@'localhost';
+
+-User3
+GRANT ALL PRIVILEGES ON cmcformation.* TO 'User3'@'localhost';
+
+-User4
+GRANT UPDATE ON cmcformation.ETUDIANT TO 'User4'@'localhost';
+
+Flush privileges;
+
+4. Vérifier les privilèges attribués à chacun de ces utilisateurs à l'aide de la commande SHOW GRANTS For User name@localhost.
+
+correction 4
+
+SHOW GRANTS FOR 'User1'@'localhost';
+SHOW GRANTS FOR 'User2'@'localhost';
+SHOW GRANTS FOR 'User3'@'localhost';
+SHOW GRANTS FOR 'User4'@'localhost';
+
+

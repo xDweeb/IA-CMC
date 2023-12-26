@@ -1,6 +1,13 @@
-#Créer un tableau unidimensionnel NumPy à partir des listes Python
+#Comment Cree une matrice identite 3x3 avec numpy
 
-import numpy as xdweb
-a=xdweb.random.randint(10,size=(2,4,3))
-a[0,1,-1]=7
-print(a)
+import numpy as np
+
+matrice_identite = np.eye(3)
+print(matrice_identite)
+
+matrice_iden = np.identity(3)
+print(matrice_iden)
+
+#Comment ajouter deux matrices A et B en utilisant numpy
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+        .reset-password-form {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+        }
+        .reset-password-form input[type="text"],
+        .reset-password-form input[type="email"] {
+            margin-bottom: 20px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .reset-password-form button {
+            padding: 8px;
+            color: #fff;
+            background-color: #00a1c6;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .reset-password-form button:hover {
+            background-color: #00a1c6;
+        }
+        .back-to-login {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .back-to-login a {
+            color: #00a1c6;
+            text-decoration: none;
+        }
+        .back-to-login a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <form class="reset-password-form">
+        <input type="text" placeholder="User name" required>
+        <input type="email" placeholder="Email address" required>
+        <button type="submit">Reset password</button>
+        <div class="back-to-login">
+            <a href="#">Back to login page</a>
+        </div>
+    </form>
+</body>
+</html>
