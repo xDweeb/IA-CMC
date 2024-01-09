@@ -426,4 +426,37 @@ SHOW GRANTS FOR 'User2'@'localhost';
 SHOW GRANTS FOR 'User3'@'localhost';
 SHOW GRANTS FOR 'User4'@'localhost';
 
+5. Connectez-vous à l'aide de l'utilisateur User4 .
+
+correction 5
+
+mysql -u User4 -p
+Modep@sse4
+
+6. Essayez de modifier dans la table ETUDIANT.
+
+correction 6
+
+USE cmcformation;
+Update ETUDIANT SET nomEtu = 'xDweb' WHERE numCINEL = 'AB234567';
+
+7. Connectez-vous avec le compte root.
+
+correction 7
+
+mysql -u root -p
+9761
+
+8. Supprimer les droits DELETE à l'utilisateur User3.
+
+correction 8
+
+REVOKE DELETE ON cmcformation.* FROM 'User3'@'localhost';
+or
+REVOKE DELETE ON *.* FROM 'User3'@'localhost';
+
+
+
+
+
 
