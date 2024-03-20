@@ -1,0 +1,121 @@
+-- 1. Création de la table date_dim
+CREATE TABLE date_dim (
+    Date_PK INT NOT NULL AUTO_INCREMENT,
+    Date DATE NOT NULL,
+    Jour_semaine VARCHAR(20) NOT NULL,
+    Jour_semaine_numero INT NOT NULL,
+    Jour_mois INT NOT NULL,
+    Jour_annee INT NOT NULL,
+    Semaine_annee INT NOT NULL,
+    Mois_num INT NOT NULL,
+    Mois_nom VARCHAR(20) NOT NULL,
+    Trimestre INT NOT NULL,
+    Annee INT NOT NULL,
+    PRIMARY KEY (Date_PK),
+    INDEX idx_Date (Date)
+);
+
+-- 2. Création de la table nombres
+CREATE TABLE nombres (
+    n INT NOT NULL
+);
+
+-- 3. Création de la procédure genererNombre
+DELIMITER //
+CREATE PROCEDURE genererNombre(IN idDepart INT, IN idFin INT)
+BEGIN
+    DECLARE i INT;
+    SET i = idDepart;
+    WHILE i <= idFin DO
+        INSERT INTO nombres (n) VALUES (i);
+        SET i = i + 1;
+    END WHILE;
+END//
+DELIMITER ;
+
+-- 4. Appel de la procédure genererNombre
+CALL genererNombre(0, 365);
+
+-- 5. Vérification des enregistrements dans la table nombres
+SELECT * FROM nombres;
+
+-- 6. Exécution de la requête SELECT pour générer les dates
+SELECT n, DATE_ADD('2024-01-01', INTERVAL n DAY) AS dateGeneree FROM nombres WHERE DATE_ADD('2024-01-01', INTERVAL n DAY) <= '2024-12-31';
+
+-- 7. Utilisation de la requête imbriquée pour obtenir le nom du jour de la semaine
+SELECT n, DATE_ADD('2024-01-01', INTERVAL n DAY) AS dateGeneree, DAYNAME(DATE_ADD('2024-01-01', INTERVAL n DAY)) AS nom_jour_semaine FROM nombres WHERE DATE_ADD('2024-01-01', INTERVAL n DAY) <= '2024-12-31';
+
+-- 8. Ajout des autres colonnes et insertion dans la table date_dim
+INSERT INTO date_dim (Date, Jour_semaine, Jour_semaine_numero, Jour_mois, Jour_annee, Semaine_annee, Mois_num, Mois_nom, Trimestre, Annee)
+SELECT DATE_ADD('2024-01-01', INTERVAL n DAY), DAYNAME(DATE_ADD('2024-01-01', INTERVAL n DAY)), WEEKDAY(DATE_ADD('2024-01-01', INTERVAL n DAY)), DAY(DATE_ADD('2024-01-01', INTERVAL n DAY)), DAYOFYEAR(DATE_ADD('2024-01-01', INTERVAL n DAY)), WEEK(DATE_ADD('2024-01-01', INTERVAL n DAY)), MONTH(DATE_ADD('2024-01-01', INTERVAL n DAY)), MONTHNAME(DATE_ADD('2024-01-01', INTERVAL n DAY)), QUARTER(DATE_ADD('2024-01-01', INTERVAL n DAY)), YEAR(DATE_ADD('2024-01-01', INTERVAL n DAY))
+FROM nombres WHERE DATE_ADD('2024-01-01', INTERVAL n DAY) <= '2024-12-31';
+
+-- 9. Requête SELECT pour afficher trimestre et isWeekEnd
+SELECT DATE_ADD('2024-01-01', INTERVAL n DAY) AS Date_Generee,
+       QUARTER(DATE_ADD('2024-01-01', INTERVAL n DAY)) AS Trimestre,
+       CASE WHEN DAYNAME(DATE_ADD('2024-01-01', INTERVAL n DAY)) IN ('Saturday', 'Sunday') THEN 'Oui' ELSE 'Non' END AS isWeekEnd
+FROM nombres WHERE DATE_ADD('2024-01-01', INTERVAL n DAY) <= '2024-12-31';
+
+-- 10. Combinaison de requête INSERT et SELECT pour insérer le résultat d'une SELECT dans la table date_dim :
+
+INSERT INTO date_dim (Date, Jour_semaine, Jour_semaine_numero, Jour_mois, Jour_annee, Semaine_annee, Mois_num, Mois_nom, Trimestre, Annee)
+SELECT 
+    Date_Generee,
+    DAYNAME(Date_Generee),
+    WEEKDAY(Date_Generee),
+    DAY(Date_Generee),
+    DAYOFYEAR(Date_Generee),
+    WEEK(Date_Generee),
+    MONTH(Date_Generee),
+    MONTHNAME(Date_Generee),
+    QUARTER(Date_Generee),
+    YEAR(Date_Generee)
+FROM (
+    SELECT DATE_ADD('2024-01-01', INTERVAL n DAY) AS Date_Generee, n FROM nombres WHERE DATE_ADD('2024-01-01', INTERVAL n DAY) <= '2024-12-31'
+) AS generated_dates;
+
+
+-- 11. Requête SELECT pour afficher le trimestre et indiquer si une date correspond à un jour de fin de semaine (samedi ou dimanche) :
+
+SELECT 
+    Date_Generee,
+    QUARTER(Date_Generee) AS Trimestre,
+    CASE 
+        WHEN DAYNAME(Date_Generee) IN ('Saturday', 'Sunday') THEN 'Oui' 
+        ELSE 'Non' 
+    END AS isWeekEnd
+FROM (
+    SELECT DATE_ADD('2024-01-01', INTERVAL n DAY) AS Date_Generee, n FROM nombres WHERE DATE_ADD('2024-01-01', INTERVAL n DAY) <= '2024-12-31'
+) AS generated_dates;
+
+
+Execrcice 3 : 
+
+-- 1. fait et Dimensions :
+fait :
+Résultats des matchs (score à domicile et à l'extérieur).
+Participation des joueurs dans les matchs (temps de jeu).
+Dimensions :
+Date
+Équipe
+Joueur
+Position du joueur
+
+-- 3. Créez la table de faits "Performances" avec les colonnes nécessaires pour stocker les données en utilisant SQL.
+
+CREATE TABLE performances (
+    Performance_PK INT NOT NULL AUTO_INCREMENT,
+    Date_PK INT NOT NULL,
+    Equipe_PK INT NOT NULL,
+    Joueur_PK INT NOT NULL,
+    Position VARCHAR(20) NOT NULL,
+    Temps_jeu INT NOT NULL,
+    Buts INT NOT NULL,
+    Passes INT NOT NULL,
+    PRIMARY KEY (Performance_PK),
+    FOREIGN KEY (Date_PK) REFERENCES date_dim(Date_PK),
+    FOREIGN KEY (Equipe_PK) REFERENCES equipe_dim(Equipe_PK),
+    FOREIGN KEY (Joueur_PK) REFERENCES joueur_dim(Joueur_PK)
+);
+
+-- 4. 
