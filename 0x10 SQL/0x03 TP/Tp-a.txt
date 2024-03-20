@@ -118,4 +118,4 @@ CREATE TABLE performances (
     FOREIGN KEY (Joueur_PK) REFERENCES joueur_dim(Joueur_PK)
 );
 
--- 4. 
+-- 4. pour
