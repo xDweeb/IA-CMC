@@ -89,33 +89,159 @@ FROM (
 ) AS generated_dates;
 
 
-Execrcice 3 : 
+Exercice 3 : Modélisation dimensionnelle et création de la table de faits Performances
+Identification des faits et dimensions :
 
--- 1. fait et Dimensions :
-fait :
-Résultats des matchs (score à domicile et à l'extérieur).
-Participation des joueurs dans les matchs (temps de jeu).
-Dimensions :
-Date
-Équipe
-Joueur
-Position du joueur
+Faits : Performance des équipes et des joueurs lors des matchs.
+Dimensions : Date du match, Équipe à domicile, Équipe à l'extérieur, Joueur.
+Modélisation dimensionnelle :
 
--- 3. Créez la table de faits "Performances" avec les colonnes nécessaires pour stocker les données en utilisant SQL.
+Table de faits Performances :
 
-CREATE TABLE performances (
-    Performance_PK INT NOT NULL AUTO_INCREMENT,
+ID_match (clé étrangère)
+ID_joueur (clé étrangère)
+Date_PK (clé étrangère)
+Score_domicile
+Score_exterieur
+Temps_de_jeu
+Tables de dimensions associées :
+
+Date_dim (pour la dimension temporelle)
+Equipe_domicile et Equipe_exterieur (pour les équipes)
+Joueur_dim (pour les joueurs)
+Création de la table de faits Performances :
+
+CREATE TABLE Performances (
+    ID_match INT NOT NULL,
+    ID_joueur INT NOT NULL,
     Date_PK INT NOT NULL,
-    Equipe_PK INT NOT NULL,
-    Joueur_PK INT NOT NULL,
-    Position VARCHAR(20) NOT NULL,
-    Temps_jeu INT NOT NULL,
-    Buts INT NOT NULL,
-    Passes INT NOT NULL,
-    PRIMARY KEY (Performance_PK),
-    FOREIGN KEY (Date_PK) REFERENCES date_dim(Date_PK),
-    FOREIGN KEY (Equipe_PK) REFERENCES equipe_dim(Equipe_PK),
-    FOREIGN KEY (Joueur_PK) REFERENCES joueur_dim(Joueur_PK)
+    Score_domicile INT NOT NULL,
+    Score_exterieur INT NOT NULL,
+    Temps_de_jeu TIME NOT NULL,
+    FOREIGN KEY (ID_match) REFERENCES match (ID_match),
+    FOREIGN KEY (ID_joueur) REFERENCES joueur (ID_joueur),
+    FOREIGN KEY (Date_PK) REFERENCES date_dim (Date_PK)
 );
 
--- 4. pour
+Ajout des contraintes de clé étrangère :
+
+ALTER TABLE Performances
+ADD CONSTRAINT fk_match FOREIGN KEY (ID_match) REFERENCES match (ID_match),
+ADD CONSTRAINT fk_joueur FOREIGN KEY (ID_joueur) REFERENCES joueur (ID_joueur),
+ADD CONSTRAINT fk_date FOREIGN KEY (Date_PK) REFERENCES date_dim (Date_PK);
+
+
+Compte rendu des Travaux Pratiques : Génération et insertion de dates
+
+Titre du TP : Génération et insertion de dates dans une table date_dim
+
+Objectif du TP :
+
+Le but de ce TP était de générer des dates pour une année donnée à partir du 1er janvier 2024 jusqu'au 31 décembre 2024, et de les insérer dans une table appelée date_dim. Les étapes suivantes ont été réalisées pour atteindre cet objectif :
+
+Création de la table date_dim :
+Une table nommée date_dim a été créée avec les attributs nécessaires pour stocker les informations sur les dates générées, y compris le jour de la semaine, le numéro du jour de la semaine, le jour du mois, le jour de l'année, la semaine de l'année, le numéro du mois, le nom du mois, le trimestre et l'année. Une contrainte de clé primaire a été ajoutée sur l'attribut Date_PK, et un index a été créé sur la colonne Date pour optimiser les performances des requêtes.
+
+Génération des nombres :
+Une table nommée nombres avec un seul attribut n a été créée pour stocker une séquence de nombres.
+
+Création de la procédure genererNombre :
+Une procédure stockée genererNombre a été définie pour insérer des nombres de 0 à 365 dans la table nombres.
+
+Appel de la procédure genererNombre :
+La procédure genererNombre a été appelée avec les paramètres 0 et 365 pour générer les nombres de 0 à 365.
+
+Vérification des enregistrements dans la table nombres :
+Une requête SELECT a été utilisée pour vérifier que les enregistrements ont été correctement insérés dans la table nombres.
+
+6Exécution de la requête SELECT pour générer les dates :
+Une requête SELECT a été exécutée pour générer les dates en ajoutant un certain nombre de jours à la date de départ '2024-01-01'. Seules les dates inférieures ou égales au 31 décembre 2024 ont été sélectionnées.
+
+7Utilisation de la requête imbriquée pour obtenir le nom du jour de la semaine :
+Une requête SELECT imbriquée a été utilisée pour obtenir le nom du jour de la semaine à partir des dates générées.
+
+8Ajout des autres colonnes et insertion dans la table date_dim :
+Les autres colonnes de la table date_dim ont été remplies en utilisant les fonctions MySQL appropriées pour extraire les informations nécessaires à partir des dates générées.
+
+Requête SELECT pour afficher le trimestre et indiquer si une date correspond à un jour de fin de semaine :
+Une requête SELECT a été utilisée pour afficher le trimestre correspondant à chaque date et indiquer si cette date est un jour de fin de semaine (samedi ou dimanche).
+
+Combinaison de requête INSERT et SELECT pour insérer le résultat d'une SELECT dans la table date_dim :
+Une combinaison de requête INSERT et SELECT a été utilisée pour insérer le résultat de la requête SELECT dans la table date_dim, remplissant ainsi la table avec les informations sur les dates générées.
+
+En conclusion, ce TP a permis de générer et d'insérer efficacement des dates dans une table MySQL en utilisant des requêtes SQL et des procédures stockées. Il a également permis de comprendre l'utilisation des fonctions MySQL pour manipuler et extraire des informations à partir de dates.
+
+Compte rendu des Travaux Pratiques : Modélisation dimensionnelle des performances sportives
+
+Titre du TP : Modélisation dimensionnelle des performances sportives
+
+Objectif du TP :
+
+L'objectif de cet exercice était de concevoir une modélisation dimensionnelle pour un système de suivi des performances sportives, puis de créer les tables de faits et de dimensions nécessaires pour stocker les données.
+
+1. Identification des faits et des dimensions :
+
+Faits : Les faits dans ce contexte sont les performances des équipes et des joueurs lors des matchs, telles que le score, le temps de jeu, etc.
+
+Dimensions : Les dimensions sont les différentes caractéristiques des matchs et des joueurs qui peuvent être utilisées pour analyser les performances. Elles comprennent la date du match, les équipes (à domicile et à l'extérieur), les joueurs, etc.
+
+2. Modélisation dimensionnelle :
+
+Une modélisation dimensionnelle typique pour ce problème pourrait inclure les dimensions suivantes :
+
+Dimension Match :
+
+Date du match
+Équipe à domicile
+Équipe à l'extérieur
+Dimension Joueur :
+
+Nom du joueur
+Position du joueur
+Dimension Temps de jeu :
+
+Temps de jeu du joueur dans le match
+3. Création de la table de faits "Performances" :
+
+sql
+Copy code
+CREATE TABLE Performances (
+    Match_ID INT,
+    Joueur_ID INT,
+    Score_Domicile INT,
+    Score_Extérieur INT,
+    Temps_Jeu INT,
+    FOREIGN KEY (Match_ID) REFERENCES Matches(Match_ID),
+    FOREIGN KEY (Joueur_ID) REFERENCES Joueurs(Joueur_ID)
+);
+4. Identification des clés étrangères pour les dimensions :
+
+Les colonnes Match_ID et Joueur_ID de la table de faits seront utilisées comme clés étrangères pour les dimensions correspondantes (Matches et Joueurs).
+
+5. Définition des tables de dimensions :
+
+Table Matches :
+sql
+Copy code
+CREATE TABLE Matches (
+    Match_ID INT PRIMARY KEY,
+    Date_Match DATE,
+    Equipe_Domicile VARCHAR(50),
+    Equipe_Extérieur VARCHAR(50)
+);
+Table Joueurs :
+sql
+Copy code
+CREATE TABLE Joueurs (
+    Joueur_ID INT PRIMARY KEY,
+    Nom_Joueur VARCHAR(50),
+    Position VARCHAR(50)
+);
+6. Ajout de contraintes de clé étrangère :
+
+sql
+Copy code
+ALTER TABLE Performances
+ADD CONSTRAINT fk_match FOREIGN KEY (Match_ID) REFERENCES Matches(Match_ID),
+ADD CONSTRAINT fk_joueur FOREIGN KEY (Joueur_ID) REFERENCES Joueurs(Joueur_ID);
+En conclusion, ce TP a permis de comprendre la modélisation dimensionnelle des données sportives et d'appliquer les concepts de clés étrangères et de contraintes de clés étrangères pour assurer l'intégrité des données. La conception de tables de faits et de dimensions est essentielle pour analyser et interpréter les performances sportives de manière efficace.
