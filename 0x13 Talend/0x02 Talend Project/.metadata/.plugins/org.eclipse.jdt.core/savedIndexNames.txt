@@ -1,1 +1,0 @@
-INDEX VERSION 1.131+C:\Users\xdweb\OneDrive\Documents\IA-CMC\0x13 Talend\0x02 Talend Project\.metadata\.plugins\org.eclipse.jdt.core
