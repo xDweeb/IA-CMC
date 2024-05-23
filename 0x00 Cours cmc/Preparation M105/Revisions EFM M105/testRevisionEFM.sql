@@ -1,4 +1,8 @@
 
+--Exercice 1
+
+create database efmrevision;
+
 use efmrevision;
 
 create table produit_SCD (
@@ -61,6 +65,7 @@ select * from produit_scd
 where date_fin is  null and  id_produit=5;
 
 
+--Exercice 2
 CREATE TABLE  date_dim (
       Date_PK INT NOT NULL,
       DATTE DATE NOT NULL ,
