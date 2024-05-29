@@ -1,0 +1,15 @@
+ID_LigneCommande;ID_Commande;Nom_produit;ID_Client;Prix_unitaire;Quantite;Ville
+1_1001;1001;Smart Screen;1;817,36 Dollar;3;Casa
+2_1001;1001;iPhone 14 Pro;1;999,09 Dollar;2;Casa
+1_1002;1002;iPhone 14 Pro;2;999,09 Dollar;2;Rabat
+2_1002;1002;Dell XPS 13;2;1181 Dollar;2;Rabat
+1_1003;1003;Dell XPS 13;3;1181 Dollar;1;Oujda
+2_1003;1003;iPhone 14 Pro;3;999,09 Dollar;2;Oujda
+1_1004;1004;iPhone 14 Pro;2;999,09 Dollar;2;Fes
+1_1005;1005;HP EliteBook;2;727,18 Dollar;4;Casa
+1_1006;1006;Samsung Galaxy;1;1181,73 Dollar;3;Casa
+1_1007;1007;MacBook Pro 16 P;3;2181,73 Dollar;1;Casa
+1_1008;1008;Smart Screen;1;1409 Dollar;1;Rabat
+1_1009;1009;Xiaomi Mi 12;2;772,64 Dollar;2;Casa
+1_1010;1010;TCL 8K Mini-LED TVs;1;2545,36 Dollar;1;Casa
+1_1011;1011;Razer Blade 14;2;899,91 Dollar;3;Fes

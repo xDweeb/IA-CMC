@@ -144,4 +144,39 @@ FROM (
 
 
 
+SELECT id, DATE_ADD('2024-01-01', INTERVAL id DAY) AS dateGeneree
+FROM nombres
+WHERE DATE_ADD('2024-01-01', INTERVAL id DAY) <= '2024-12-31';
 
+
+
+SELECT r.id, r.dateGeneree, DAYNAME(r.dateGeneree) AS Jour_Semaine
+FROM (
+    SELECT id, DATE_ADD('2024-01-01', INTERVAL id DAY) AS dateGeneree
+    FROM nombres
+    WHERE DATE_ADD('2024-01-01', INTERVAL id DAY) <= '2024-12-31'
+) AS r;
+
+
+
+SELECT r.id, r.dateGeneree, DAYNAME(r.dateGeneree) AS Jour_Semaine,
+    DAYOFMONTH(r.dateGeneree) AS Jour_Mois,
+    MONTH(r.dateGeneree) AS Mois_num,
+    MONTHNAME(r.dateGeneree) AS Mois_nom,
+    YEAR(r.dateGeneree) AS Annee
+FROM (
+    SELECT id, DATE_ADD('2024-01-01', INTERVAL id DAY) AS dateGeneree
+    FROM nombres
+    WHERE DATE_ADD('2024-01-01', INTERVAL id DAY) <= '2024-12-31'
+) AS r;
+
+
+INSERT INTO date_dim (Date_Pk, DATTE, Jour_semaine, Jour_mois, Mois_num, Mois_nom, Annee)
+SELECT DATE_FORMAT(r.dateGeneree, '%Y%m%d') AS Date_Pk, r.dateGeneree, DAYNAME(r.dateGeneree),
+    DAYOFMONTH(r.dateGeneree), MONTH(r.dateGeneree),
+    MONTHNAME(r.dateGeneree), YEAR(r.dateGeneree)
+FROM (
+    SELECT id, DATE_ADD('2024-01-01', INTERVAL id DAY) AS dateGeneree
+    FROM nombres
+    WHERE DATE_ADD('2024-01-01', INTERVAL id DAY) <= '2024-12-31'
+) AS r;
