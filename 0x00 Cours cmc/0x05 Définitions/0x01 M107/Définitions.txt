@@ -54,3 +54,93 @@ servir notamment comme outil d’aide à la décision
    - La classification est utilisée pour prédire une étiquette de catégorie, comme déterminer si un email est spam ou non, ou classifier une image parmi plusieurs catégories. La sortie est une variable catégorique.
 
 
+
+
+///////////////////////////////////////////
+ETL : 
+- la Business  Intelligence
+- Définition  de Cycle de vie des données  (DLM)
+- Les étapes du cycle de vie des données : Collecte des données
+Collecte des
+données
+Stockage des
+données
+Traitement
+des données
+Ana lyse des
+données
+Sauvegarde
+des données
+Réutilisation
+des données
+Suppression
+des données
+- Définition  de l'ETL et son role
+- Les  processus  d’ETL  (Extraction,  Transformation  et  Chargement)  gèrent  toutes  les  étapes  de  collecte  et  de  transfert  des  données dans  les systèmes d’information hétérogènes :
+- Différence entre l’ETL et l’ELT : La  différence  entre  l’ETL  et  l’ELT réside  dans  le  fait  que  les  données sont  transformées  en  informations décisionnelles  et  dans  la  quantité  de données conservée dans les entrepôts.
+- Types d'outils d’ETL
+- Exemples de sources  de données 
+- Types de données
+- Valeurs
+manquantes
+Détection des
+Élimination des
+valeurs
+doublons
+a berrantes
+Croisée des
+données
+Harmonisation
+des valeurs et
+des dates
+Codage et
+simplification
+Extraction des
+valeurs
+Modification
+de
+l'organisation
+des données
+- lire les données à partir de fichiers plats, de bases de données, de services web, etc.
+-tFileInputDelimited : Permet de lire un fichier texte délimité.
+-tFileInputExcel : Permet de lire un fichier Excel.
+-tMysqlInput : Permet de lire des données d'une base de données MySQL.
+-tOracleInput : Permet de lire des données d'une base de données Oracle.
+
+
+-tFilterColumns : Permet de filtrer les colonnes d'un flux de données.
+-tFilterRow : Permet de filtrer les lignes d'un flux de données.
+-tConvertType : Permet de convertir le type de données d'une colonne.
+-tDenormalizeSortedRow : Permet de dénormaliser les données.
+
+-tAggregateRow : Permet d'agréger les données d'un flux de données.
+-tAggregateSortedRow : Permet d'agréger les données triées d'un flux de données.
+-tJoin : Permet de joindre deux flux de données.
+-tMap : Permet de mapper les données d'un flux de données.
+
+-tMSSqlOutput : Permet d'écrire des données dans une base de données SQL Server.
+-tOracleOutput : Permet d'écrire des données dans une base de données Oracle.
+-tFileOutputDelimited : Permet d'écrire des données dans un fichier texte délimité.
+-tFileOutputExcel : Permet d'écrire des données dans un fichier Excel.
+-tFileOutputJSON : Permet d'écrire des données dans un fichier JSON.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

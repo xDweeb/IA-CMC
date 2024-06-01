@@ -34,3 +34,51 @@ Voici les définitions manquantes complétées et réécrites :
 19. **Machine à vecteurs de support (SVM)** : La SVM est une technique d'apprentissage supervisé puissante et versatile utilisée pour la classification, la régression et la détection des outliers. Elle vise à trouver l'hyperplan qui maximise la marge entre les classes de données.
 
 20. **Principe du regroupement** : Le principe du regroupement (clustering) consiste à partitionner un ensemble de données en groupes tels que les données dans chaque groupe soient plus similaires entre elles qu'aux données des autres groupes. Ce principe est fondamental dans des techniques d'apprentissage non supervisé et aide à découvrir la structure inhérente des données sans étiquettes préalables.
+
+Voici les définitions des termes manquants :
+
+21. **Regroupement hiérarchique** : Le regroupement hiérarchique est une méthode de clustering qui vise à construire une hiérarchie de clusters. Elle peut être réalisée de manière agglomérative (fusionnant progressivement les clusters les plus proches) ou divisive (scindant progressivement les clusters les plus larges), permettant ainsi de visualiser des structures de données complexes sous forme d'arbre, appelé dendrogramme.
+
+22. **Regroupement par partition** : Le regroupement par partition, tel que l'algorithme K-means, divise l'ensemble des données en plusieurs groupes (partitions) en minimisant la variance intra-cluster et en maximisant la variance inter-cluster. Chaque groupe contient des données plus similaires entre elles qu'aux données des autres groupes.
+
+23. **Réduction de dimensionnalité** : La réduction de dimensionnalité est un processus en apprentissage automatique et en analyse de données qui vise à réduire le nombre de variables aléatoires sous-jacentes considérées, par obtention d'un ensemble de variables principales. Cela permet de simplifier les modèles et de réduire le coût computationnel tout en préservant le plus possible l'information utile.
+
+24. **L’apprentissage profond** : L'apprentissage profond est un sous-domaine de l'apprentissage automatique qui utilise des réseaux de neurones profonds (composés de nombreuses couches) pour modéliser des relations complexes entre les entrées et les sorties et découvrir des motifs dans les données de grande dimension.
+
+25. **Les réseaux de neurones** : Les réseaux de neurones sont des modèles computationnels inspirés par le fonctionnement du cerveau humain, utilisés pour reconnaître des modèles et des relations complexes dans les données. Ils sont composés de neurones disposés en couches, où chaque neurone reçoit des entrées, effectue des calculs et transmet des sorties.
+
+26. **Sur-apprentissage** : Le sur-apprentissage se produit lorsqu'un modèle d'apprentissage automatique est trop complexe, contenant trop de paramètres par rapport au nombre d'observations. Le modèle apprend les détails et le bruit des données d'entraînement au détriment de sa performance sur de nouvelles données.
+
+27. **Sous-apprentissage** : Le sous-apprentissage se produit lorsqu'un modèle d'apprentissage automatique est trop simple pour capturer la structure sous-jacente des données. Il ne performe ni sur les données d'entraînement ni sur de nouvelles données, indiquant une incapacité à généraliser à partir de ses entrées.
+
+28. **Régularisation** : La régularisation est une technique utilisée pour réduire l'erreur de généralisation en pénalisant la complexité du modèle. Elle aide à éviter le sur-apprentissage en ajoutant un terme de pénalité à la fonction de coût ou en utilisant des méthodes comme le dropout pour les réseaux de neurones.
+
+29. **Couche de convolution** : Une couche de convolution est une composante essentielle des réseaux de neurones convolutifs (CNNs) utilisés principalement pour le traitement d'image. Elle effectue une opération mathématique de convolution qui combine les entrées avec un ensemble de poids, appelé un filtre ou noyau, pour produire une carte de caractéristiques.
+
+30. **Fonction d’activation** : La fonction d'activation est une fonction non linéaire appliquée à la sortie d'un neurone dans un réseau de neurones. ReLU est l'une des fonctions d'activation les plus couramment utilisées, qui transmet les valeurs d'entrée positives sans changement et annule les valeurs négatives.
+
+31. **Couche de pooling** : Une couche de pooling ou de sous-échantillonnage réduit la dimensionnalité spatiale de chaque carte de caractéristiques tout en conservant les informations les plus importantes. Elle est souvent utilisée dans les réseaux de neurones convolutifs pour réduire le nombre de paramètres et le sur-apprentissage.
+
+32. **Couche entièrement connectée** : Une couche entièrement connectée, ou couche dense, est une couche où chaque neurone est connecté à tous les neurones de la couche précédente. Cette couche combine les caractéristiques apprises pour classer
+
+
+1. **Composants d'un système expert** :
+   - **Base de connaissances** : Contient les faits et les règles du domaine d'application.
+   - **Moteur d'inférence** : Traite les règles et les faits de la base de connaissances pour tirer des conclusions ou prendre des décisions.
+   - **Interface utilisateur** : Permet aux utilisateurs d'interagir avec le système expert, posant des questions et recevant des réponses.
+   - **Base de données de faits** : Stocke les données spécifiques à chaque cas traité par le système.
+   - **Mécanisme d'explication** : Explique les raisonnements et les conclusions du système à l'utilisateur.
+
+2. **Trois algorithmes de recherche** :
+   - **Recherche en profondeur (Depth-First Search, DFS)** : Explore autant que possible le long de chaque branche avant de revenir en arrière.
+   - **Recherche en largeur (Breadth-First Search, BFS)** : Explore tous les nœuds d'un niveau avant de passer au niveau suivant.
+   - **Recherche A*** : Utilise des heuristiques pour estimer le coût le plus faible pour atteindre l'objectif, combinant ainsi les approches de meilleure première recherche et de coût uniforme.
+
+3. **Types d’apprentissage automatique** :
+   - **Apprentissage supervisé** : Les modèles prédisent des sorties basées sur des entrées étiquetées. Exemples d'algorithmes incluent la régression linéaire et les machines à vecteurs de support (SVM).
+   - **Apprentissage non supervisé** : Les modèles identifient des structures cachées dans des données non étiquetées. Exemples d'algorithmes incluent K-means et l'analyse en composantes principales (PCA).
+   - **Apprentissage par renforcement** : Les modèles apprennent à prendre des décisions en observant les conséquences de leurs actions, sans données étiquetées pré-fournies. Un exemple d'algorithme est Q-learning.
+
+4. **Différence entre régression et classification** :
+   - **Régression** : Utilisée pour prédire des valeurs continues. Exemple : prédire le prix d'une maison basé sur sa taille et sa localisation.
+   - **Classification** : Utilisée pour prédire des catégories discrètes. Exemple : déterminer si un email est un spam ou non.
