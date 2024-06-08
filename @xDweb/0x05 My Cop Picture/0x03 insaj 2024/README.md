@@ -1,7 +1,3 @@
-Absolutely, let's include that:
-
----
-
 🏆 National Robotics Competition Victory! 🤖
 
 After finishing second last year, I made a comeback with participation again, but this time by winning first place with my incredible team at the recent National Robotics Competition held in El Jadida at EnsaJ. It's truly a testament to the hard work, dedication, and perseverance of each member.
@@ -20,14 +16,8 @@ A special shoutout to the INDENSAJ CLUB for organizing such an outstanding event
 
 In addition to the competition, we conducted an engaging 3D printer workshop, further emphasizing our commitment to pushing the boundaries of technology and learning.
 
-Securing the first place in the second edition of the competition feels like a remarkable achievement, especially considering the tough competition we faced. 
-
 Heartfelt thanks to our fellow competitors and everyone who supported us throughout this journey. Your encouragement has been invaluable.
 
 Here's to more victories and milestones in the exciting world of robotics! 🚀💡
 
 #Robotics #STEM #Teamwork #Innovation #Competition #Success
-
----
-
-Does this version meet your expectations?
