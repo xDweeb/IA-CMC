@@ -1,0 +1,3 @@
+Thrilled to have contributed to the success of the second edition of the Vex Go Moroccan Championship! Being entrusted with managing chrono time and data entry for teams' points was an incredible experience. Witnessing the innovation and dedication of young minds in robotics and STEM education was truly inspiring. Huge thanks to all participants, organizers, and supporters for making this event a memorable one! 
+
+#VexGoMorocco #STEMEducation 🤖🚀
