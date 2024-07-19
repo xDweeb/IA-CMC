@@ -26,4 +26,4 @@ Bonne chance à tous pour vos études et examens !
 
 ---
 
-*Ce document est mis à jour régulièrement pour refléter les dernières informations et évolutions dans le domaine de l'Intelligence Artificielle.*
+*Ce travail est créé par [Taibi El Yakouti](https://www.linkedin.com/in/xdweb), stagiaire en Intelligence Artificielle à CMC et actuellement en deuxième année. Il a été élaboré pour aider les nouveaux étudiants ainsi que les personnes intéressées par le domaine de l'Intelligence Artificielle.*
