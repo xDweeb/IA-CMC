@@ -1,6 +1,4 @@
-## 1. Année - Intelligence Artificielle (Tronc Commun)
-
-### Module M101 : Se situer au regard du métier et de la démarche de formation (15h)
+## Module M101 : Se situer au regard du métier et de la démarche de formation (15h)
 
 ### Sommaire
 1. [Découvrir les Métiers de l'Intelligence Artificielle](#découvrir-les-métiers-de-lintelligence-artificielle)

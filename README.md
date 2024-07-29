@@ -1,2 +1,3 @@
-## IA-CMC
-# IA-Courses by @xDweb
+ ## 1. Année - Intelligence Artificielle (Tronc Commun)
+
+# IA-Courses CMC by @xDweb
