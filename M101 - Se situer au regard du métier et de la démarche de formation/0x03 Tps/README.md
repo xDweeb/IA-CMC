@@ -11,6 +11,6 @@ Ce dossier est vide car le module M101 ne comporte pas de TP associés. Toutes l
 
 ## Note
 
-Pour plus de détails sur le contenu théorique du module, veuillez consulter les résumés de cours disponibles dans le dossier [Résumé de Cours](../M101).
+Pour plus de détails sur le contenu théorique du module, veuillez consulter les Examens de cours disponibles dans le dossier [Examens de Cours](../0x04%Examens).
 
 ---
