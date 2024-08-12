@@ -13,8 +13,8 @@
 Ce document constitue le premier modèle de 15 heures pour le module M101 de la première année du tronc commun en Intelligence Artificielle. Il est conçu pour fournir une vue d'ensemble des métiers de l'IA, des compétences requises, ainsi que des modalités de formation.
 
 ### Contrôles et Examens
-- **Contrôle** : [Lien vers le contrôle](https://www.linkedin.com/in/xdweb)
-- **Examen de Fin de Module (EFM)** : [Lien vers l'EFM](https://www.linkedin.com/in/xdweb)
+- **Contrôle** : [Lien vers le contrôle](https://github.com/xDweeb/IA-CMC/blob/7cd525f6e2baf7a1523bf0c2af4e499a36ca6f0a/M101%20-%20Se%20situer%20au%20regard%20du%20m%C3%A9tier%20et%20de%20la%20d%C3%A9marche%20de%20formation/0x04%20Examens/Control-1.md)
+- **Examen de Fin de Module (EFM)** : [Lien vers l'EFM](https://github.com/xDweeb/IA-CMC/blob/7cd525f6e2baf7a1523bf0c2af4e499a36ca6f0a/M101%20-%20Se%20situer%20au%20regard%20du%20m%C3%A9tier%20et%20de%20la%20d%C3%A9marche%20de%20formation/0x04%20Examens/EFM-101.md)
 
 ### Auteurs
 - Créé par [@xdweb](https://www.linkedin.com/in/xdweb)

@@ -11,6 +11,6 @@ Ce dossier est vide car le module M101 ne comporte pas de TP associés. Toutes l
 
 ## Note
 
-Pour plus de détails sur le contenu théorique du module, veuillez consulter les Examens de cours disponibles dans le dossier [Examens de Cours](../0x04%Examens).
+Pour plus de détails sur le contenu théorique du module, veuillez consulter les Examens de cours disponibles dans le dossier [Examens de Cours](https://github.com/xDweeb/IA-CMC/tree/7cd525f6e2baf7a1523bf0c2af4e499a36ca6f0a/M101%20-%20Se%20situer%20au%20regard%20du%20m%C3%A9tier%20et%20de%20la%20d%C3%A9marche%20de%20formation/0x04%20Examens).
 
 ---
