@@ -1,26 +1,37 @@
-# Module M101 : Se situer au regard du métier et de la démarche de formation
+## Module M101 : Se situer au regard du métier et de la démarche de formation (15h)
 
-## Résultats et Corrections
+### Description
+Le module M101 fait partie du programme de formation en Intelligence Artificielle à la Cités des Métiers et des Compétences. Il offre une vue d'ensemble des métiers de l'IA, des compétences requises, ainsi que des modalités de formation.
 
-Ce dossier présente les résultats et les corrections des évaluations pour le module M101.
+### Structure du Dossier
+Ce dossier est organisé en six sous-dossiers pour faciliter l'accès aux différents types de documents et ressources associés à ce module :
 
-### Résultats des Évaluations
+1. **Cours**
+   - [Cours PDF](./0x01%20Cours) : Tous les cours sous forme de documents PDF.
 
-1. **Premier Contrôle**
-   - **Note Obtenue :** 18/20
-   - **[Voir le Document](lien_vers_le_document_du_controle)**
+2. **Mes Résumés**
+   - [Mes Résumés](./0x02%20Mes%20Résumés) : Résumés manuscrits et en ligne pour réviser les concepts clés.
 
-2. **Examen de Fin de Module (EFM)**
-   - **Note Obtenue :** 38/40
-   - **[Voir le Document](lien_vers_le_document_efm)**
+3. **TPs**
+   - [Travaux Pratiques](./0x03%20TPs) : Les travaux pratiques réalisés au cours du module, permettant de mettre en application les connaissances acquises.
 
-### Corrections
+4. **Examens**
+   - [Examens et Contrôles](./0x04%20Examens) : Les contrôles et examens de fin de module pour s'entraîner et évaluer ses compétences.
 
-- **Corrections du Premier Contrôle :** [Voir les Corrections](https://github.com/xDweeb/IA-CMC/blob/1fe79f7c23bf9e3e6dba558bf3ffc2686c842d90/M101%20-%20Se%20situer%20au%20regard%20du%20m%C3%A9tier%20et%20de%20la%20d%C3%A9marche%20de%20formation/0x6%20Mes%20R%C3%A9sultats%20et%20Corrections/Control-1.pdf)
-- **Corrections de l'Examen de Fin de Module (EFM) :** [Voir les Corrections](lien_vers_les_corrections_de_efm)
+5. **Ressources**
+   - [Ressources](./0x05%20Ressources) : Ressources supplémentaires pour approfondir les connaissances liées au module.
 
-### Note Finale du Module
+6. **Mes Résultats et Corrections**
+   - [Résultats et Corrections](./0x6%20Mes%20Résultats%20et%20Corrections) : Résultats et corrections détaillées des examens et contrôles passés.
 
-La note finale pour le module M101 est **18.48/20**.
+### Objectifs du Module
+- Découvrir les métiers de l'Intelligence Artificielle.
+- Comprendre les objectifs de la formation en IA.
+- Situer les compétences de la formation dans le contexte du marché du travail.
+
+### Auteurs
+- Créé par [@xdweb](https://www.linkedin.com/in/xdweb), stagiaire en Intelligence Artificielle à la CMC.
 
 ---
+
+*Ce dossier est destiné à aider les étudiants à naviguer à travers le module M101 et à maximiser leur compréhension des sujets abordés.*
