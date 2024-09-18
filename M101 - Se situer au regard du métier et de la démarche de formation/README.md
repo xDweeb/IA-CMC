@@ -15,14 +15,8 @@ Ce dossier est organisé en six sous-dossiers pour faciliter l'accès aux diffé
 3. **TPs**
    - [Travaux Pratiques](./0x03%20TPs) : Les travaux pratiques réalisés au cours du module, permettant de mettre en application les connaissances acquises.
 
-4. **Examens**
-   - [Examens et Contrôles](./0x04%20Examens) : Les contrôles et examens de fin de module pour s'entraîner et évaluer ses compétences.
-
-5. **Ressources**
+4. **Ressources**
    - [Ressources](./0x05%20Ressources) : Ressources supplémentaires pour approfondir les connaissances liées au module.
-
-6. **Mes Résultats et Corrections**
-   - [Résultats et Corrections](./0x6%20Mes%20Résultats%20et%20Corrections) : Résultats et corrections détaillées des examens et contrôles passés.
 
 ### Objectifs du Module
 - Découvrir les métiers de l'Intelligence Artificielle.
