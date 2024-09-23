@@ -1,8 +1,0 @@
-# exercice 1
-Ecrire un algorithme qui demande le nom et I'age d'un étudiant a
-l'université et afficher "Bonjour ..., tu as ... ans et bienvenue a
-l'université" en remplagant les ... par, respectivement le nom et I'age.
-
-# exercice 2
-Ecrire un algorithme qui demande a l'utilisateur de taper la largeur et la
-longueur d'un rectangle et qui en affiche le périmetre et la surface.

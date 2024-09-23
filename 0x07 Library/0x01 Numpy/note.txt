@@ -1,8 +1,0 @@
-#Créer un tableau unidimensionnel NumPy à partir des listes Python
-
-import numpy as xdweb
-table = xdweb.zeros(10,dtype='int')
-print(table)
-
-####################################################################
-

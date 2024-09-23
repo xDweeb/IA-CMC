@@ -1,1 +1,0 @@
-.. autofunction:: Bonjour.bonjour
