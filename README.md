@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-Just My CMC Work
-=======
 # IA-CMC : Première Année en Intelligence Artificielle à la Cités des Métiers et des Compétences
 
 ## Introduction
@@ -43,4 +40,3 @@ Ce repository vise à centraliser toutes les ressources nécessaires pour réuss
 ---
 
 *Ce repository est maintenu pour aider les étudiants en Intelligence Artificielle à la CMC à accéder facilement aux documents et ressources nécessaires à leur formation.*
->>>>>>> ccd53fcfde2a0729d39a82050e2074ffebb1c032
